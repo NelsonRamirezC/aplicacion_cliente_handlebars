@@ -1,0 +1,36 @@
+<h1 class="text-center mt-5">Página principal</h1>
+
+
+<section class="publicaciones">
+    {{#if posts}}
+    <div class="row">
+        {{#each posts}}
+            <article class="mx-auto my-3">
+                <div class="card mb-3 mx-auto" style="max-width: 80%;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="https://picsum.photos/id/684/600/400" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{this.titulo}}</h5>
+                                <p class="card-text">{{this.contenido}}</p>
+                                <a href="http://localhost:3001/posts/details/{{this.id}}">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        {{/each}}
+    </div>
+    {{else}}
+    <h2 class="text-center mt-5">No hay contenido para mostrar</h2>
+    {{/if}}
+</section>
+
+
+<style>
+    .publicaciones article{
+        width: 80vw;
+    }
+</style>

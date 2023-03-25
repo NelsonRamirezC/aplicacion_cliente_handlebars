@@ -1,0 +1,19 @@
+<h1 class="text-center mt-5">Detalles de post</h1>
+
+
+{{#if post}}
+    <p>ID post: {{post.id}}</p>
+    <p>Titulo: {{post.titulo}}</p>
+
+    {{#if comentarios}}
+        {{#each comentarios}}
+                <p>Comentario: {{this.comentario}}</p>
+                <p>Autor: {{this.autor.nombre}}</p>
+        {{/each}}
+    {{else}}
+        <h2 class="text-center">Post no tiene comentarios asociados.</h2>
+    {{/if}}
+
+{{else}}
+    <h2 class="text-center">No existen post</h2>
+{{/if}}
